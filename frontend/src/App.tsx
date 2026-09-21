@@ -11,7 +11,7 @@ const App = () => {
     return (
         <BrowserRouter>
             <Provider store={store}>
-                <ThemeProvider defaultTheme="dark" storageKey="ui-key">
+                <ThemeProvider defaultTheme="light" storageKey="ui-key">
                     <Router />
                 </ThemeProvider>
             </Provider>
