@@ -1,0 +1,236 @@
+/* Tailwind v4 shifts your configuration variables directly into the theme directive */
+@theme {
+    /* --- Content & Dark Mode Settings --- */
+    /* Note: Tailwind v4 handles content file scanning automatically. */
+    /* Note: Dark mode defaults to 'media'. To keep using your v3 'class' strategy: */
+    --variant-dark: .dark &;
+
+    /* --- Scroll Padding (Custom Token Mapping) --- */
+    --scroll-padding-72: 18rem;
+
+    /* --- Colors Configuration --- */
+    --color-current: currentColor;
+    --color-transparent: transparent;
+    --color-white: #ffffff;
+    --color-black: #1c2434;
+    --color-red: #fb5454;
+    --color-black-2: #010101;
+    --color-body: #64748b;
+    --color-bodydark: #aeb7c0;
+    --color-bodydark1: #dee4ee;
+    --color-bodydark2: #8a99af;
+    --color-text-dark-primary: #f5f5f7;
+    --color-text-dark-secondary: #a5a5ab;
+    --color-text-dark-tertiary: #6e6e73;
+
+    /* Bg Nested Object */
+    --color-bg-light-1: #fafafb;
+    --color-bg-light-2: #ffffff;
+    --color-bg-light-3: #f2f2f5;
+    --color-bg-dark-1: #0e0e11;
+    --color-bg-dark-2: #16161a;
+    --color-bg-dark-3: #1e1e24;
+
+    /* Text Nested Object */
+    --color-text-light-primary: #1c1c1e;
+    --color-text-light-secondary: #3a3a3c;
+    --color-text-light-muted: #8e8e93;
+    --color-text-dark-primary: #f5f5f7;
+    --color-text-dark-secondary: #a5a5ab;
+    --color-text-dark-muted: #6e6e73;
+    --color-text-gold: #efbf04;
+
+    /* Accent Nested Object */
+    --color-accent-light: #22c55e;
+    --color-accent-light-hover: #4ade80;
+    --color-accent-light-active: #15803d;
+    --color-accent-light-subtle: #dcfce7;
+    --color-accent-light-secondary: #16a34a;
+    --color-accent-dark: #50c878;
+    --color-accent-dark-hover: #6bea9b;
+    --color-accent-dark-active: #267e48;
+    --color-accent-dark-subtle: #123222;
+    --color-accent-dark-secondary: #97ffbd;
+
+    /* Light and Dark Objects */
+    --color-light-1: #ffffff;
+    --color-light-2: #fafafb;
+    --color-light-3: #f2f2f5;
+    --color-dark-1: #0e0e11;
+    --color-dark-2: #16161a;
+    --color-dark-3: #1e1e24;
+    --color-textlight-primary: #1c1c1e;
+    --color-textlight-secondary: #3a3a3c;
+    --color-textlight-muted: #8e8e93;
+
+    /* Border Object */
+    --color-border-soft: #2a2a2f;
+    --color-border-strong: #3a3a40;
+    --color-border-divider: #232327;
+
+    /* Core Status Rules */
+    --color-success: #4ade80;
+    --color-warning: #ffd34d;
+    --color-error: #ef4444;
+
+    /* Neutral Color Palette Scale */
+    --color-neutral-50: #f8f8f8;
+    --color-neutral-100: #e4e4e4;
+    --color-neutral-200: #cfcfcf;
+    --color-neutral-300: #bbbbbb;
+    --color-neutral-400: #a6a6a6;
+    --color-neutral-500: #929292;
+    --color-neutral-600: #7e7e7e;
+    --color-neutral-700: #696969;
+    --color-neutral-800: #4f4f4f;
+    --color-neutral-900: #2c2c2c;
+
+    /* Primary Color Palette Scale */
+    --color-primary-50: #f0f9e7;
+    --color-primary-100: #e2f4d1;
+    --color-primary-200: #d1edb7;
+    --color-primary-300: #c7eba5;
+    --color-primary-400: #a3db6d;
+    --color-primary-500: #89be57;
+    --color-primary-600: #71a143;
+    --color-primary-700: #5a8431;
+    --color-primary-800: #446722;
+    --color-primary-900: #2f4a16;
+
+    /* Secondary Color Palette Scale */
+    --color-secondary-50: #fff7ec;
+    --color-secondary-100: #ffe9cc;
+    --color-secondary-200: #ffd297;
+    --color-secondary-300: #ffbf6c;
+    --color-secondary-400: #ffad42;
+    --color-secondary-500: #f99b28;
+    --color-secondary-600: #e3860b;
+    --color-secondary-700: #ca7301;
+    --color-secondary-800: #a45e05;
+    --color-secondary-900: #7c4702;
+
+    /* Default Object overrides */
+    --color-default-white: #ffffff;
+    --color-default-black: #231f20;
+    --color-default-overlay: #1b1a1a;
+
+    /* Structure and Miscellaneous Brand Tokens */
+    --color-stroke: #e2e8f0;
+    --color-gray: #eff4fb;
+    --color-graydark: #333a48;
+    --color-gray-2: #f7f9fc;
+    --color-gray-3: #fafafa;
+    --color-whiten: #f1f5f9;
+    --color-whiter: #f5f7fd;
+    --color-boxdark: #24303f;
+    --color-boxdark-2: #1a222c;
+    --color-strokedark: #2e3a47;
+    --color-form-strokedark: #3d4d60;
+    --color-form-input: #1d2a39;
+    --color-meta-1: #dc3545;
+    --color-meta-2: #eff2f7;
+    --color-meta-3: #10b981;
+    --color-meta-4: #313d4a;
+    --color-meta-5: #259ae6;
+    --color-meta-6: #ffba00;
+    --color-meta-7: #ff6766;
+    --color-meta-8: #f0950c;
+    --color-meta-9: #e5e7eb;
+    --color-meta-10: #0fadcf;
+
+    /* Success Palette Scale */
+    --color-success-50: #f4fff3;
+    --color-success-100: #e3ffe2;
+    --color-success-200: #bcfcbb;
+    --color-success-300: #99f497;
+    --color-success-400: #60e55d;
+    --color-success-500: #34d130;
+    --color-success-600: #04bb00;
+    --color-success-700: #059f02;
+    --color-success-800: #027600;
+    --color-success-900: #024d00;
+
+    /* Danger Palette Scale */
+    --color-danger-50: #fef4f3;
+    --color-danger-100: #ffe8e7;
+    --color-danger-200: #ffb1ad;
+    --color-danger-300: #ff837c;
+    --color-danger-400: #ff544a;
+    --color-danger-500: #ee3329;
+    --color-danger-600: #ea0c00;
+    --color-danger-700: #bd0a00;
+    --color-danger-800: #720600;
+    --color-danger-900: #260200;
+
+    /* Warning Palette Scale */
+    --color-warning-50: #fffae5;
+    --color-warning-100: #fff0b7;
+    --color-warning-200: #ffe78a;
+    --color-warning-300: #ffde5c;
+    --color-warning-400: #ffd52e;
+    --color-warning-500: #ffcc00;
+    --color-warning-600: #d6ab00;
+    --color-warning-700: #ad8b00;
+    --color-warning-800: #856a00;
+    --color-warning-900: #5c4900;
+
+    /* Gaming Tier Theme Colors */
+    --color-tier-bronze: #b96d2f;
+    --color-tier-silver: #7d95a5;
+    --color-tier-gold: #c98b19;
+    --color-tier-platinum: #00a4a6;
+    --color-tier-diamond: #672bd1;
+    --color-tier-master: #c12d4c;
+    --color-tier-grandmaster: #397dc2;
+    --color-tier-legend: #cf390c;
+
+    /* --- Typography Font Sizes --- */
+    /* Syntax: --text-{name}: {size}; --line-height-{name}: {height}; */
+    --text-title-xxl: 52px;
+    --text-title-xxl--line-height: 88px;
+
+    --text-title-xl: 48px;
+    --text-title-xl--line-height: 72px;
+
+    --text-title-lg: 42px;
+    --text-title-lg--line-height: 60px;
+
+    --text-title-md: 36px;
+    --text-title-md--line-height: 44px;
+
+    --text-title-sm: 30px;
+    --text-title-sm--line-height: 38px;
+
+    --text-title-xs: 24px;
+    --text-title-xs--line-height: 34px;
+
+    --text-title-xsm: 22px;
+    --text-title-xsm--line-height: 30px;
+
+    --text-text-xxl: 20px;
+    --text-text-xxl--line-height: 30px;
+
+    --text-text-xl: 18px;
+    --text-text-xl--line-height: 28px;
+
+    --text-text-lg: 15px;
+    --text-text-lg--line-height: 26px;
+
+    --text-text-md: 14px;
+    --text-text-md--line-height: 22px;
+
+    --text-text-sm: 12px;
+    --text-text-sm--line-height: 20px;
+
+    --text-text-xs: 10px;
+    --text-text-xs--line-height: 18px;
+}
+
+/* --- Aside Scrollbars (Custom Legacy Object Migration) --- */
+/* In v4, arbitrary objects like asideScrollbars are written directly as vanilla CSS utility variants or helper variables */
+@utility aside-scrollbar-light {
+    scrollbar-color: light;
+}
+@utility aside-scrollbar-gray {
+    scrollbar-color: gray;
+}
