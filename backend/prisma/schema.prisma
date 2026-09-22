@@ -1,0 +1,69 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  firstName String
+  lastName  String
+  auth      Auth?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Auth {
+  id       String @id @default(uuid())
+  email    String @unique
+  password String
+
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  roleId String
+  role   Role   @relation(fields: [roleId], references: [id], onDelete: Restrict)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sessions Session[]
+}
+
+model Role {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  auths     Auth[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Session {
+  id               String @id @default(uuid())
+  refreshTokenHash String
+  sessionKey       String
+
+  authId String
+  auth   Auth   @relation(fields: [authId], references: [id], onDelete: Cascade)
+
+  revokedAt  DateTime?
+  expiryDate DateTime?
+  browser    String?
+  os         String?
+  userAgent  String
+  ipAddress  String
+  country    String?
+  city       String?
+  ll         Int[]
+  timezone   String?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}

@@ -8,12 +8,17 @@ import { type JWTPayload } from './types/jwt-payload.types';
 import { type IResult } from 'ua-parser-js';
 import { UserAgent } from '../common/decorators/user-agent.decorator';
 import { ClientIp } from '../common/decorators/client-ip.decorator';
+import { RoleGuard } from 'src/role/guards/role.guard';
+import { Roles } from 'src/role/decorator/roles.decorator';
+import { Role } from 'src/common/enums/role.enum';
 
 // @Post -> auth/login
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
+  @UseGuards(JwtAuthGuard, RoleGuard)
+  @Roles(Role.ADMIN)
   @Post('register')
   postRegister(@Body() registerUserDto: RegisterUserDto) {
     return this.authService.registerUser(registerUserDto);

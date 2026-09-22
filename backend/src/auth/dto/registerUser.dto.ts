@@ -4,7 +4,11 @@ export class RegisterUserDto {
   @IsNotEmpty({ message: 'Username is required' })
   @IsString()
   @MinLength(3)
-  username: string;
+  firstName: string;
+
+  @IsString()
+  @MinLength(3)
+  lastName: string;
 
   @IsNotEmpty({ message: 'Email is required' })
   @IsEmail()
